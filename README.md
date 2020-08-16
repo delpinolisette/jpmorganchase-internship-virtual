@@ -42,10 +42,10 @@ Note: This file lists everything I learned and did during the virtual internship
 4. After this, I installed Node, Npm, Nvm. (Node is a JavaScript runtime that executes JS code outside of a browser, Npm is a pakcage manager, Nvm is a node version manager).
     * [installation instructions for nvm, linux](https://github.com/nvm-sh/nvm#install--update-script)
 5. After some more debugging, I tried everything from clearning npm cache with -f to rebuilding node-gyp manually, in the end I got the data to start streaming:
-![streaming data](assets/gif/01.gif)
 <img src="assets/gif/01.gif" width="200" height="200" />
 6. Then, I moved on to making changes to the code:
     * First, I need to make the graph continuously update so that it doesnt need to be clicked a bunch of times.
         * To do this, I modified `App.tsx`, (yay Typescript!)
         *
     * Then, I needed to remove any duplicate data.
+    * ![streaming data](assets/gif/01.gif)
