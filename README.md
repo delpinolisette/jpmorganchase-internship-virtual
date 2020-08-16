@@ -35,7 +35,16 @@ Note: This file lists everything I learned and did during the virtual internship
     * I installed `nvm`, which is a version manager for node. For this task, I am using version 11.
     * After installing C++ Build tools for Visual Studio, I set the npm msvs version to 2017, which caused errors down the line.
     * After several dizzying errors, force cleaning the npm cache, then `npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}`, then setting msvs version to 2019 was the solution!.
+3. After having to wipe my hard drive for unrelated reasons, I was getting strange errors during `npm install` and `npm start` again. In the meantime, I had started using the absolutely lovely Windows Subsystem Linux. I decided to switch over to Linux.
+    * to avoid issues, I aliased `python3` in Ubuntu to `python` by `alias python=python3`
+        * after this, made sure to `source ~/.bashrc`
+        * [source](https://askubuntu.com/questions/320996/how-to-make-python-program-command-execute-python-3)
+4. After this, I installed Node, Npm, Nvm. (Node is a JavaScript runtime that executes JS code outside of a browser, Npm is a pakcage manager, Nvm is a node version manager).
+    * [installation instructions for nvm, linux](https://github.com/nvm-sh/nvm#install--update-script)
+5. After some more debugging, I tried everything from clearning npm cache with -f to rebuilding node-gyp manually, in the end I got the data to start streaming:
+![streaming data](assets/gif/01.gif)
 6. Then, I moved on to making changes to the code:
     * First, I need to make the graph continuously update so that it doesnt need to be clicked a bunch of times.
         * To do this, I modified `App.tsx`, (yay Typescript!)
+        *
     * Then, I needed to remove any duplicate data.
