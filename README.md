@@ -1,6 +1,6 @@
 ### What I did during JPMorgan Chase Virtual Internship:
 
-Note: This file lists everything I learned and did during the virtual internship. To avoid plagarism I can't post my code on a public repo, unfortunately.
+Note: This file lists everything I learned and did during the virtual internship. To avoid plagiarism I can't post my code on a public repo, unfortunately.
 
 ### Task 1
 ---
@@ -11,7 +11,7 @@ Note: This file lists everything I learned and did during the virtual internship
     * modifying getDataPoint in client to return correct prices
     * modifying getRatio in client
     * modifying Main in client to print the correct prices.
-4. Bonus Taks: Writing Unit Tests:
+4. Bonus Task: Writing Unit Tests: (I learned more during the Bonus Task!)
     * Use the "Build-Act-Assert" model
         * Build: a simulated scenario with dummy date
         * Act: Make operations and call on the function
@@ -55,4 +55,17 @@ Note: This file lists everything I learned and did during the virtual internship
     * after this, I modified `componentDidMount` method, which runs after the component has been rendered to the Document Object Model. I modified it by first providing `const elem` with a more straightforward definition,
     `const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement`
     * after this, I added more attributes according to the [documentation](https://github.com/finos/perspective/tree/master/packages/perspective#tableviewconfig--view) We needed the table view to have y_line, column pivots corresponding to stocks, row pivots corresponding to timestamps, columns corresponding to top ask price. We fixed the issue of duplicate data by aggregating stick, top ask price, top bid price, and the timestamps.
-7. Then, I needed to remove the duplicate data.
+7. After comparing my submission to the model work patch file, I noticed a few things. Identical changes had been made, save for
+`console.log('useful message here');`
+After adding a few useful logs, I returned to my submission.
+
+* One thing I could work on moving forward is that I get a "JSON Parsing error" when the server is trying to parse through this function in `src\js\viewer\state_element.js:
+
+``` react
+ get_aggregate_attribute() {
+ const aggs = JSON.parse(this.getAttribute("aggregates")) || {};
+ return Object.keys(aggs).map(col => ({column: col, op: aggs[col]}));
+}
+```
+
+The code is valid JSON, so the bug is a bit confusing.
