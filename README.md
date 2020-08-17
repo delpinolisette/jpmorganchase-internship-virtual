@@ -69,3 +69,35 @@ After adding a few useful logs, I returned to my submission.
 ```
 
 The code is valid JSON, so the bug is a bit confusing.
+
+### Task 3 : Another (React) One
+1. For this task, the initial task looks like the end of Task 2.
+
+<img src="assets/gif/02.gif" width="600" height="400" />
+
+2. The goal of the task is to provide a graph that tracks the ratio between two stocks rather than their highest ask price. In this way, traders can compare the ratio to a historical correlation to see if the stock is profitable or not.
+
+3. First, I added fields to `const schema` in the `componentDidMount` method. I need to display a ratio, a time stamp, and bounds for stock ratios that set of trigger alerts, so I added the appropriate fields:
+``` react
+    // add fields for new Perspective view configuration
+    const schema = {
+      // prices for calculating ratio
+      price_abc: 'float',
+      price_def: 'float',
+      // ratio tracks ratio of two stocks
+      ratio: 'float',
+      timestamp: 'date',
+      // bounds for passing a trigger alert
+      upper_bound: 'float',
+      lower_bound: 'float',
+      trigger_alert: 'float',
+    };
+```
+4. I then added attributes to the `elem` according to the changes I started in `cont schema`
+5. Most interesting to me was the need to add column brackets `[]`  around the argument passed to `this.table.update`.
+6. I updated the row interface to match the schema changes in `DataManipulator.ts`, the class that controls the data before it gets sent to server. This allowed me to modify its class function `generateRow` to have a single return object, explaining the earlier change in step number 5.
+7. Success! Here is the final result showing all fields we originally added to scheme: (including ratio and trigger_alert)
+
+<img src="assets/gif/03.gif" width="600" height="400" />
+
+8. After writing the patch file, I submitted my work. [Here is my certificate of completion]()
