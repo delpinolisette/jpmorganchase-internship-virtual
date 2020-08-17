@@ -100,4 +100,4 @@ The code is valid JSON, so the bug is a bit confusing.
 
 <img src="assets/gif/03.gif" width="600" height="400" />
 
-8. After writing the patch file, I submitted my work. [Here is my certificate of completion]()
+8. After writing the patch file, I submitted my work. [Here is my certificate of completion](/assets/completion.pdf)
